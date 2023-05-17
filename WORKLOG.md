@@ -4,7 +4,7 @@
 
 ### May 17, 2023
 
-Researched about Burp Intruder. Learned 4 different attack-types:
+Researched about Burp Intruder. Learned 4 different attack-types: \n
 ..* Sniper - places each payload into each payload position. 
 
 ### date y
