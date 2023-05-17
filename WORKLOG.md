@@ -1,19 +1,20 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Zesan Rahman
 
-### date x
+### May 17, 2023
 
-info
+Researched about Burp Intruder. Learned 4 different attack-types:
+..* Sniper - places each payload into each payload position. 
 
 ### date y
 
 info
 
 
-## GROUP MEMBER 2
+## Joseph Wu
 
-### date x
+### May 17, 2023
 
 info
 
