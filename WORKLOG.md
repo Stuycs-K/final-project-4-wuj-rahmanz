@@ -7,7 +7,7 @@
 Researched about Burp Intruder. Learned 4 different attack-types:
 
 
-..* Sniper - places each payload into each payload position. 
+* Sniper - places each payload into each payload position. 
 
 ### date y
 
