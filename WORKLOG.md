@@ -4,17 +4,25 @@
 
 ### May 17, 2023
 
-Researched about Burp Intruder. Assuming payload is a wordlist, there are 4 different attack-types: 
+Researched about Burp Intruder. Assuming payload is a wordlist, there are 4 different attack-types:
 
 
 * Sniper - places each payload into each payload position. Requests = length of payload * num of positions
 * Battering Ram - Iterates through the payload, inputting the word for each position. Reqests = payload length
 * Pitchfork - Different wordlists for each payload position. Requests depend on the payloads' lengths.
-* Cluster Bomb - Similar to pitchfork. However, every possible combination of payloads is tested. 
+* Cluster Bomb - Similar to pitchfork. However, every possible combination of payloads is tested.
 
 More info: https://systemweakness.com/attack-types-in-intruder-burpsuite-5c65900f71c7
 
-### date y
+### May 22, 2023
+
+Absent for May 18 and 19 due to AP exams
+
+Classwork plan: A website hosted by a VM. The beginning of each page describes sniper, battering ram, and pitchfork. At the bottom of each page is a login that we use to demonstrate each attack.
+
+Homework plan: One of the linked pages is a login page, the rest of them are blank pages with "nothing there". However, using burp proxy and creating a site map will lead you to 2 payloads: one with a list of usernames and one with a list of passwords. Then they do a clusterbomb attack on the site.
+
+Started working on website.
 
 info
 
@@ -23,9 +31,16 @@ info
 
 ### May 17, 2023
 
-info
+Researched and created a vm. Currently in the process of getting it to host a website.
 
-### May 21, 2023
+### May 18, 2023
 
-Reserached and created a vm. Currently in the process of getting it to host a website.
+Attempted to create a VM with VirtualBox.
 
+### May 19, 2023
+
+Realized approach to VM was wrong. There goes everything :D
+
+### May 22, 2023
+
+Now using vagrant in combination with virtual box to create VM. In process of creating web server for VM.
