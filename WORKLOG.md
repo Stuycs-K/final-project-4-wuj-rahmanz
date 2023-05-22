@@ -25,6 +25,7 @@ info
 
 info
 
-### date y
+### May 21, 2023
 
-info
+Reserached and created a vm. Currently in the process of getting it to host a website.
+
