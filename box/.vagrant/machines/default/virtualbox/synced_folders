@@ -1,0 +1,1 @@
+{"virtualbox":{"/data":{"guestpath":"/data","hostpath":"C:/Users/Josep/final-project-4-wuj-rahmanz/data","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Josep/final-project-4-wuj-rahmanz/box","disabled":false,"__vagrantfile":true}}}

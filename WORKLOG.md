@@ -44,3 +44,7 @@ Realized approach to VM was wrong. There goes everything :D
 ### May 22, 2023
 
 Now using vagrant in combination with virtual box to create VM. In process of creating web server for VM.
+
+### May 23, 2023
+
+VM now successfully hosts a website at ip 192.168.33.10, accessible by the host. Make sure to put any website stuff in /box/webcontent.
