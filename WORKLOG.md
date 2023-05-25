@@ -24,7 +24,9 @@ Homework plan: One of the linked pages is a login page, the rest of them are bla
 
 Started working on website.
 
-info
+### May 23-24, 2023
+
+Finished the HTML of the website. Got all the basic content down. 
 
 
 ## Joseph Wu
