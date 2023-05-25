@@ -32,4 +32,4 @@ def sniper():
 
 # DO NOT EDIT BELOW
 if __name__ == "__main__":
-app.run()
+        app.run()

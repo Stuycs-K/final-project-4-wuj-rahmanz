@@ -72,13 +72,14 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-END
   apt update
-  yes | apt install -y apache2
-  yes | apt-get install python3
-  yes | apt-get install libapache2-mod-wsgi python-dev
-  yes | apt install python3-pip
-  yes | apt-get install libapache2-mod-wsgi-py3
   rm -r /var/www/BurpIntrude/app/*
   cp -r /vagrant/app/* /var/www/BurpIntrude/app
+  service apache2 restart
   echo "Machine provisioned at $(date)! Welcome!"
   END
+  #yes | apt install -y apache2
+  #yes | apt-get install python3
+  #yes | apt-get install libapache2-mod-wsgi python-dev
+  #yes | apt install python3-pip
+  #yes | apt-get install libapache2-mod-wsgi-py3
 end

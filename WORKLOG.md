@@ -28,6 +28,10 @@ Started working on website.
 
 Finished the HTML of the website. Got all the basic content down. 
 
+### May 25, 2023
+
+Worked on creating Tryhackme questions and setting up the room
+
 
 ## Joseph Wu
 
@@ -55,6 +59,7 @@ VM now successfully hosts a website at ip 192.168.33.10, accessible by the host.
 Researching how to get flask to work with apache
 
 ### May 25, 2023
+Setup provisioning for VM
 Flask now works with Apache. Webcontents renamed to app.
 Make sure this is file structure:
 
