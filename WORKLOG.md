@@ -76,3 +76,13 @@ Make sure this is file structure:
         |- index.html
         |- sniper.html
         |-etc
+
+### May 26, 2023
+Got User account database setup
+Created Navbar with links to each page. Houses the login/logout.
+    - Base.html houses nav bar
+        - use {% extends 'base.html' %} {% block main %}
+                ------code------
+                {% endblock %}
+          on other html pages to include nav bar on that page
+Use Foundation for styling

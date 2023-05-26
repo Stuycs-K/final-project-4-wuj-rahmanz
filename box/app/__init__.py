@@ -4,7 +4,8 @@ import sqlite3
 from flask import Flask # facilitate flask webserving
 from flask import render_template  # facilitate jinja templating
 from flask import request  # facilitate form submission
-from flask import session  # facilitate user sessions
+from flask import session  # facilitate user sessions\
+from flask import redirect
 import os
 
 app=Flask(__name__) # create Flask object
@@ -12,7 +13,7 @@ app.secret_key = os.urandom(32)     #randomized string for SECRET KEY (for inter
 
 dirname = os.path.dirname(__file__)
 
-DB_FILE = "tables.db"
+DB_FILE = os.path.join(dirname, "tables.db")
 
 #-------------------------DataBase-------------------------
 db = sqlite3.connect(DB_FILE, check_same_thread=False)
@@ -26,27 +27,44 @@ db.commit()  # save changes
 
 # DO NOT EDIT ABOVE
 
+def render_template_with_email(template):
+    emailStr = session.get('email', None)
+    print("email is " + str(emailStr) + " in render_template_with_email")
+    return render_template(template, email=emailStr)
+
 @app.route("/")
 def index():
-        return render_template("index.html")
+        return render_template_with_email("index.html")
 
 @app.route("/battering_ram")
 def battering_ram():
-        return render_template("battering_ram.html")
+        return render_template_with_email("battering_ram.html")
 
 @app.route("/cluster_bomb")
 def cluster_bomb():
-        return render_template("cluster_bomb.html")
+        return render_template_with_email("cluster_bomb.html")
 
 @app.route("/pitchfork")
 def pitchfork():
-        return render_template("pitchfork.html")
+        return render_template_with_email("pitchfork.html")
 
 @app.route("/sniper")
 def sniper():
-        return render_template("sniper.html")
+        return render_template_with_email("sniper.html")
 
 #-------------------------ACCOUNTS-------------------------
+def check_email(email):
+    c.execute("SELECT * FROM users WHERE email = ?", (email,))
+    if c.fetchone():
+        return True
+    else:
+        return False
+    
+def insert_account(email, password):
+    c.execute("INSERT INTO users (email, password) VALUES (?, ?)",
+              (email, password))
+    db.commit()
+
 @app.route("/register", methods=['POST'])
 def register():
 
