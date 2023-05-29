@@ -82,16 +82,16 @@ def register():
         if input_email.strip() == '' or input_password.strip() == '' or confirm_password.strip() == '':
             # return json response instead of rendering template
             if input_email.strip() == '':
-                response['error'] = "Please enter a email. \n"
+                response['error'] = "Please enter a email."
 
             if input_password.strip() == '':
-                response['error'] += "Please enter a password. \n"
+                response['error'] += "Please enter a password."
 
             if confirm_password.strip() == '':
-                response['error'] += "Please confirm your password. \n"
+                response['error'] += "Please confirm your password."
 
             if input_password.strip() != confirm_password.strip():
-                response['error'] += "Passwords do not match. \n"
+                response['error'] += "Passwords do not match."
 
             response['success'] = "false"
             # return render_template_with_email('register.html', message=response['error'])
@@ -105,7 +105,7 @@ def register():
             # c.execute("select email from accounts where email=?", var)\
 
             if check_email(input_email):
-                response['error'] = "email is already taken. Please select another email. \n"
+                response['error'] = "email is already taken. Please select another email. "
                 response['success'] = "false"
                 return redirect(f"/?error={response['error']}&modal=register")
 
@@ -119,7 +119,7 @@ def register():
                     return redirect(f"/?success=Successfully registered!&modal=register")
                 # if passwords don't match
                 else:
-                    response['error'] = "Passwords do not match. \n"
+                    response['error'] = "Passwords do not match. "
                     response['success'] = "false"
                     print("Passwords do not match")
                     return redirect(f"/?error={response['error']}&modal=register")
@@ -168,12 +168,12 @@ def login():
         # email check
         c.execute(email_check, (input_email,))
         if not c.fetchone():
-            error_msg += "email is incorrect or not found. \n"
+            error_msg += "email is incorrect or not found. "
 
         # Password check
         c.execute(password_check, (input_password,))
         if not c.fetchone():
-            error_msg += "Password is incorrect or not found. \n"
+            error_msg += "Password is incorrect or not found. "
 
         error_msg += "Please try again."
         return redirect(f"/?error={error_msg}&modal=login")
