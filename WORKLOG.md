@@ -86,3 +86,8 @@ Created Navbar with links to each page. Houses the login/logout.
                 {% endblock %}
           on other html pages to include nav bar on that page
 Use Foundation for styling
+
+### May 29, 2023
+Added images to each page
+* index.html is home page
+each other page is self explanitory
