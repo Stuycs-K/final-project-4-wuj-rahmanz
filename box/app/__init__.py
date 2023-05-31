@@ -116,6 +116,14 @@ def register():
                     # insert into accounts table
                     insert_account(input_email, input_password)
                     response['success'] = "true"
+                    if request.method == 'GET':  # For 'get'
+                        # stores email in session
+                        session['email'] = request.args['email']
+
+                    if request.method == 'POST':  # For 'post'
+                        # stores email in session
+                        session['email'] = request.form['email']
+                        
                     return redirect(f"/?success=Successfully registered!&modal=register")
                 # if passwords don't match
                 else:

@@ -91,3 +91,6 @@ Use Foundation for styling
 Added images to each page
 * index.html is home page
 each other page is self explanitory
+
+### May 31, 2023
+Fix login
