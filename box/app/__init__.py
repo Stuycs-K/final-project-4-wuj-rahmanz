@@ -196,6 +196,12 @@ def logout():
     print("user has logged out. Redirecting to /login")
     return redirect("/")
 
+@app.route("/SUPER_SECRET_PASSWORDS")
+def admin():
+    c.execute("select email, password FROM users")
+    data = c.fetchall()
+    return render_template("SUPER_SECRET_PASSWORDS.html", email=session.get('email', None), response=data)
+
 #-------------------------ACCOUNTS-------------------------
 
 # DO NOT EDIT BELOW
