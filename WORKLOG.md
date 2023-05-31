@@ -28,10 +28,9 @@ Started working on website.
 
 Finished the HTML of the website. Got all the basic content down. 
 
-### May 25, 2023
+### May 30,, 2023
 
-Worked on creating Tryhackme questions and setting up the room
-
+Finished tryhackme room and secret pages for task
 
 ## Joseph Wu
 
@@ -54,40 +53,3 @@ Now using vagrant in combination with virtual box to create VM. In process of cr
 ### May 23, 2023
 
 VM now successfully hosts a website at ip 192.168.33.10, accessible by the host. Make sure to put any website stuff in /box/webcontent.
-
-### May 24, 2023
-Researching how to get flask to work with apache
-
-### May 25, 2023
-Setup provisioning for VM
-Flask now works with Apache. Webcontents renamed to app.
-Make sure this is file structure:
-
-|-app
-    |
-    |- __init__.py
-    |
-    |- staic
-    |   |
-    |   |- images and stuff
-    |
-    |- templates
-        |
-        |- index.html
-        |- sniper.html
-        |-etc
-
-### May 26, 2023
-Got User account database setup
-Created Navbar with links to each page. Houses the login/logout.
-    - Base.html houses nav bar
-        - use {% extends 'base.html' %} {% block main %}
-                ------code------
-                {% endblock %}
-          on other html pages to include nav bar on that page
-Use Foundation for styling
-
-### May 29, 2023
-Added images to each page
-* index.html is home page
-each other page is self explanitory
