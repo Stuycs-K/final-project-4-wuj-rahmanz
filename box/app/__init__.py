@@ -52,7 +52,42 @@ def pitchfork():
 def sniper():
         return render_template_with_email("sniper.html")
 
+@app.route("/profile")
+def profile():
+    username = session.get('email', None)
+    cadmin = isadmin()
+    return render_template("profile.html", email = username, admin=cadmin)
+
+@app.route("/change_password", methods=['POST'])
+def change_password():
+    username = session.get('email', None)
+    if username:
+        cadmin = isadmin()
+        input_password = request.form['passone']
+        input_confirm_password = request.form['passtwo']
+        if input_password != input_confirm_password:
+            return render_template('profile.html', email = username, admin=cadmin, message = "Passwords do not match. Please try again.")
+        if input_password == '':
+            return render_template('profile.html', email = username, admin=cadmin, message = "Please enter a Password")
+        else:
+            c.execute("UPDATE users SET password = ? WHERE email = ?", (input_password, username))
+            return render_template('profile.html', email = username, admin=cadmin, message = "Password Successfully Changed")
+    else:
+        return redirect("/")
+
+@app.route("/SUPER_SECRET_PASSWORDS")
+def admin():
+    c.execute("select email, password FROM users")
+    data = c.fetchall()
+    return render_template("SUPER_SECRET_PASSWORDS.html", email=session.get('email', None), response=data)
+
 #-------------------------ACCOUNTS-------------------------
+def isadmin():
+    if session.get('email', None) == 'admin@burpintrude':
+        return True
+    else:
+        return False
+
 def check_email(email):
     c.execute("SELECT * FROM users WHERE email = ?", (email,))
     if c.fetchone():
@@ -195,12 +230,6 @@ def logout():
     session.pop('email', None)
     print("user has logged out. Redirecting to /login")
     return redirect("/")
-
-@app.route("/SUPER_SECRET_PASSWORDS")
-def admin():
-    c.execute("select email, password FROM users")
-    data = c.fetchall()
-    return render_template("SUPER_SECRET_PASSWORDS.html", email=session.get('email', None), response=data)
 
 #-------------------------ACCOUNTS-------------------------
 

@@ -94,3 +94,6 @@ each other page is self explanitory
 
 ### May 31, 2023
 Fix login
+SUPPER_SECRET_PASSWORDS now dynamically contains all accounts and their passwords
+Profile page created
+    - Able to change password of an account
