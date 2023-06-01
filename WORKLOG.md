@@ -28,9 +28,13 @@ Started working on website.
 
 Finished the HTML of the website. Got all the basic content down. 
 
-### May 30,, 2023
+### May 30, 2023
 
 Finished tryhackme room and secret pages for task
+
+### June 1, 2023
+
+Finalized wordlists for tasks. Added more information about each of the tools and some more comphrehensive guides. 
 
 ## Joseph Wu
 
