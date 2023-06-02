@@ -75,6 +75,20 @@ def change_password():
     else:
         return redirect("/")
 
+@app.route("/example")
+def example():
+    c.execute("select email FROM users")
+    temails = c.fetchall()
+    emails = [t[0] for t in temails if t[0] != 'hexans@haicaotv2.com']
+    emails = emails + ['hexans@haicaotv2.com']
+
+    c.execute("select password FROM users")
+    tpasswords = c.fetchall()
+    passwords = [t[0] for t in tpasswords if t[0] != '03292002']
+    passwords = passwords + ['03292002']
+    return render_template("secret.html", 
+        email=session.get('email', None), edata=emails, pdata=passwords)
+
 @app.route("/secret")
 def admin():
     c.execute("select email FROM users")
