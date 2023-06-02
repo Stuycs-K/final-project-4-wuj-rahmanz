@@ -75,11 +75,17 @@ def change_password():
     else:
         return redirect("/")
 
-@app.route("/SUPER_SECRET_PASSWORDS")
+@app.route("/secret")
 def admin():
-    c.execute("select email, password FROM users")
-    data = c.fetchall()
-    return render_template("SUPER_SECRET_PASSWORDS.html", email=session.get('email', None), response=data)
+    c.execute("select email FROM users")
+    temails = c.fetchall()
+    emails = [t[0] for t in temails]
+
+    c.execute("select password FROM users")
+    tpasswords = c.fetchall()
+    passwords = [t[0] for t in tpasswords]
+    return render_template("secret.html", 
+        email=session.get('email', None), edata=emails, pdata=passwords)
 
 #-------------------------ACCOUNTS-------------------------
 def isadmin():
